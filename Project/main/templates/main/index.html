@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Климова Марина</title>
+    <link rel="icon" href="{% static 'main/favicon.ico' %}" type="image/favicon.ico">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="underline"></div>
+    <div class="title">
+        <a href="#"> Официальный сайт психолога <br>
+        Климовой Марины Александровны</a>
+    </div>
+    <div class="underline"></div>
+    <div class="menu">
+        <div class="wrap">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">О сеансе</a></li>
+                <li><a href="#">О психологе</a></li>
+                <li><a href="#">Отзывы</a></li>
+                <li><a href="#">Запись на прием</a></li>
+                <li><a href="#">Вопрос-ответ</a></li>
+                <li><a href="#">Контакты</a></li>
+                <li><a href="#">Личный кабинет</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="underline"></div>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
