@@ -32,12 +32,50 @@ body{
 
 .menu ul{
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     font-size: 20px;
     justify-content: space-between;
+
+}
+
+.menu li{
+    letter-spacing: 1px;
 }
 
 .menu a{
     text-decoration: none;
     color: black;
 }
+
+.photo_header{
+    position: relative;
+}
+
+.index_background_image img{
+    width: 1536px;
+    height: 568px;
+    padding: 0;
+    margin: 0;
+}
+
+.container_text_box{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 33%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.top_text{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom:30px;
+    font-size: 36px;
+}
+
+.under_top_text{
+    font-size: 30px;
+}
+
