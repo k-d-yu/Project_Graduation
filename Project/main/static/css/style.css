@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body{
     background: white;
     padding: 0;
@@ -5,7 +7,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.wrap {
+.wrap{
     max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -52,11 +54,9 @@ body{
     position: relative;
 }
 
-.index_background_image img{
-    width: 1536px;
-    height: 568px;
-    padding: 0;
-    margin: 0;
+.photo_index img{
+    width: 100%;
+    height: 605px;
 }
 
 .container_text_box{
@@ -79,3 +79,93 @@ body{
     font-size: 30px;
 }
 
+.photo_about{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.box_about{
+    font-family: 'Roboto', sans-serif;
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    padding: 20px;
+    text-align: left;
+}
+
+.header_about{  
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.text_about{
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.box_about ul{
+    margin-left: -20px;
+}
+
+.box_about li{
+    line-height: 1.5;
+}
+
+.about_content{
+    max-width: 100%;
+    line-height: 1.4;
+    margin: 1% 3% 0 3%;
+}
+
+.about_content h2{
+    text-transform: uppercase;
+}
+
+.about_content p{
+    font-size: 18px;   
+}
+
+.box_session{
+    margin: 1% 3% 0 3%;
+    position: relative;
+}
+
+.text_session{
+    width: 420px;
+}
+
+.container_session{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+.img_session1 img{
+    width: 100%;
+    height: 600px;
+    margin-bottom: 50px;
+}
+
+.text_session h2{
+    color: gray;
+}
+
+.text_session ul{
+    line-height: 1.5;
+    margin-left: -20px;
+}
+
+.img_session2 img{
+    width: 100%;
+    height: 800px;
+}
+
+.header_session{
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    position: absolute;
+    bottom: 400px;
+    left: 44%;
+    padding: 20px;
+}

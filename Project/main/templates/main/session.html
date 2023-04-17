@@ -1,0 +1,40 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+{% load static %}
+
+<div class="box_session">
+    <div class="container_session">
+        <div class="text_session">
+            <h2>
+                Личная консультация
+            </h2>
+            <ul>
+                <li>Столкнулись со сложной ситуацией?</li>
+                <li>Не можете справиться самостоятельно?</li>
+                <li>Не устраивают жизненные обстоятельства и жаждете перемен?</li>
+                <li>Готовы работать над собой и не хотите тратить годы на самокопание?</li>
+            </ul>
+            <div>
+            Я с удовольствием буду сопровождать Вас на пути к желаемой цели. Вы можете быть уверены в уважительном
+            отношении, принятии, поддержке и полной конфиденциальности.
+            </div>
+        </div>
+        <div class="img_session1">
+            <img src="{% static 'main/background1_session.jpg' %}" alt="Фоновое изображение">
+        </div>
+    </div>
+</div>
+
+<div class="img_session2">
+    <img src="{% static 'main/background2_session.jpg' %}" alt="Фоновое изображение">
+    <div class="box_session">
+        <div class="header_session">
+            Чем смогу вам помочь?
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
