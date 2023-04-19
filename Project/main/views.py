@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import About
+from .models import About, Session
 
 
 def index(request):
@@ -8,8 +8,15 @@ def index(request):
 
 def about(request):
     abouts = About.objects.all()
-    return render(request, "main/about.html", {"abouts": abouts})
+    context = {"abouts": abouts}
+    return render(request, "main/about.html", context)
 
 
 def session(request):
-    return render(request, "main/session.html")
+    sessions = Session.objects.all()
+    context = {"sessions": sessions}
+    return render(request, "main/session.html", context)
+
+
+def contacts(request):
+    return render(request, "main/contacts.html")

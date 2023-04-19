@@ -1,0 +1,33 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+{% load static %}
+
+<div class="img_contacts">
+    <div class="header_contacts">
+        Контакты
+    </div>
+</div>
+
+<div class="container_contacts">
+    <div class="text_contacts">
+        Как со мной связаться
+    </div>
+    <p class="text1_contacts">
+        Заполните форму записи, расположенную на сайте, оставив Ваш email и номер телефона, чтобы я могла предложить Вам свободные окна для встречи.
+    </p>
+    <p class="text1_contacts">
+        Вы можете также связаться со мной, позвонив по номеру <a href="tel:+7 (915) 594-84-19">+7 (915) 594-84-19</a>, либо отправив сообщение на электронную почту
+        <a href="mailto:dima_kul95@mail.ru" target="_blank">dima_kul95@mail.ru</a>, в Telegram или WhatsApp
+    </p>
+</div>
+
+<div class="container_contacts_messengers">
+    <div class="tg_ws">
+        <a href="https://t.me/k_d_yu" target="_blank"><img src="{% static 'main/telegram.png' %}" alt="Telegram" title="Telegram"></a>
+    </div>
+    <div class="tg_ws">
+        <a href="https://wa.me/9155948419" target="_blank"><img src="{% static 'main/whatsapp.png' %}" alt="WhatsApp" title="WhatsApp"></a>
+    </div>
+</div>
+
+{% endblock %}

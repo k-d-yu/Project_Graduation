@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('about/', views.about, name="about"),
     path('session/', views.session, name="session"),
+    path('contacts/', views.contacts, name="contacts"),
 ]

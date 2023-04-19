@@ -26,10 +26,102 @@
 </div>
 
 <div class="img_session2">
-    <img src="{% static 'main/background2_session.jpg' %}" alt="Фоновое изображение">
     <div class="box_session">
         <div class="header_session">
-            Чем смогу вам помочь?
+            <h2>Чем смогу вам помочь?</h2>
+            <ul>
+                {% for session in sessions %}
+                <li>
+                    {{ session }}
+                </li>
+                {% endfor %}
+            </ul>
+            и другое.
+        </div>
+    </div>
+</div>
+
+<div class="box2_session">
+    <h2>
+        Как проходит проработака
+    </h2>
+    <div class="container2_session">
+        <div><img src="{% static 'main/1.png'%}">
+            <div class="container2_session_header">
+                Знакомство
+            </div>
+            <div class="container2_session_text">
+                Знакомимся с Вами и вашей ситуацией.
+            </div>
+        </div>
+        <div><img src="{% static 'main/2.png'%}">
+            <div class="container2_session_header">
+                Выяснение задачи
+            </div>
+            <div class="container2_session_text">
+                Выясняем какого результата хочется добиться по итогу проработки.
+            </div>
+        </div>
+        <div><img src="{% static 'main/3.png'%}">
+            <div class="container2_session_header">
+                Поиск решения
+            </div>
+            <div class="container2_session_text">
+                Я озвучиваю возможные сценарии решения проблемы.
+            </div>
+        </div>
+        <div><img src="{% static 'main/4.png'%}">
+            <div class="container2_session_header">
+                Решение проблемы
+            </div>
+            <div class="container2_session_text">
+                Решаем поставленные задачи через ликвидацию оценочного убеждения.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="box2_session">
+    <h2>
+        Формат консультации
+    </h2>
+    <div class="img_session_messenger">
+        <img src="{% static 'main/messenger.png' %}">
+    </div>
+    <div class="header_messenger">
+        Онлайн-консультация
+    </div>
+    <div class="text_messenger">
+        Любым удобным для вас способом
+    </div>
+</div>
+
+<div class="box2_session">
+    <h2>
+        Стоимость консультации
+    </h2>
+    <div class="container_price">
+        <div class="content_price">
+            <h3>
+                Ознакомительная консультация
+            </h3>
+            <div>
+                Бесплатная диагностическая сессия
+            </div>
+            <p class="content_price_price">
+                <br>0 руб.
+            </p>
+        </div>
+        <div class="content_price">
+            <h3>
+                Разовая сессия
+            </h3>
+            <div>
+                Полноценная онлайн-сессия по вашей ситуации
+            </div>
+            <p class="content_price_price">
+                5 000 руб.
+            </p>
         </div>
     </div>
 </div>
