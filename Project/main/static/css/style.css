@@ -10,7 +10,6 @@ body{
 .wrap{
     max-width: 1200px;
     margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .title{
@@ -101,6 +100,7 @@ body{
     padding: 20px;
     text-align: left;
     max-width: 400px;
+    box-sizing: border-box;
 }
 
 .header_about{  
@@ -182,6 +182,7 @@ body{
     left: 400px;
     padding: 40px;
     max-width: 500px;
+    box-sizing: border-box;
 }
 
 .header_session h2{
@@ -257,6 +258,7 @@ body{
     max-width: 350px;
     text-align: center;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .content_price h3{
@@ -287,12 +289,14 @@ body{
     font-weight: bold;
     color: gray;
     text-shadow: 5px 1px 2px white;
+    box-sizing: border-box;
 }
 
 .container_contacts{
     font-family: 'Roboto', sans-serif;
     text-align: center;
     padding-top: 10px;
+    box-sizing: border-box;
 }
 
 .text_contacts{
@@ -322,4 +326,55 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     box-sizing: border-box;
+}
+
+.footer{
+    background-color: gray;
+    padding: 2% 3% 2% 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+    box-sizing: border-box;
+}
+
+.footer_text{
+    color: rgb(252, 252, 252);
+    font-size: 12px;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 1%;
+}
+
+
+.tg_ws_footer img{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 0.5%;
+}
+
+.ws_footer{
+    margin-left: 10px;
+}
+
+.footer_tel a{
+    color: rgb(252, 252, 252);
+    text-decoration: none;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.footer_block_2 ul{
+    list-style: none;
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer_block_2 a{
+    color: rgb(252, 252, 252);
+    text-decoration: none;
+}
+
+.footer_block_2 li{
+    margin: 10px;
 }

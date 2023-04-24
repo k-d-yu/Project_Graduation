@@ -34,5 +34,34 @@
         {% block content %}
         {% endblock %}
     </div>
+
+<div class="footer">
+    <div class="footer_block_1">
+        <div class="footer_text">
+            Климова Марина <br>Психолог, эмотолог
+        </div>
+        <div class="tg_ws_footer" >
+            <a href="https://t.me/k_d_yu" target="_blank"><img src="{% static 'main/telegram.png' %}" alt="Telegram"></a>
+            <a href="https://wa.me/9155948419" target="_blank"><img src="{% static 'main/whatsapp.png' %}" alt="WhatsApp" class="ws_footer"></a>
+        </div>
+        <div class="footer_tel">
+            <a href="tel:+7 (915) 594-84-19">+7 (915) 594-84-19</a>
+            <br>
+            <a href="mailto:dima_kul95@mail.ru" target="_blank">dima_kul95@mail.ru</a>
+        </div>
+    </div>
+    <div class="footer_block_2">
+        <ul>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'about' %}">О психологе</a></li>
+            <li><a href="{% url 'session' %}">О сеансе</a></li>
+            <li><a href="#">Блог</a></li>
+            <li><a href="#">Отзывы</a></li>
+            <li><a href="#">Запись на прием</a></li>
+            <li><a href="{% url 'contacts' %}">Контакты</a></li>
+            <li><a href="#">Личный кабинет</a></li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>
