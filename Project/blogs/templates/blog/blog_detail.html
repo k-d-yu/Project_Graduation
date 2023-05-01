@@ -1,0 +1,14 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+<div class="blog_detail">
+    <h2>
+        {{ blog.title }}
+    </h2>
+    <div>
+        {{ blog.description|linebreaksbr }}
+    </div>
+</div>
+
+
+{% endblock %}

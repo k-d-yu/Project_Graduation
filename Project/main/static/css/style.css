@@ -378,3 +378,45 @@ body{
 .footer_block_2 li{
     margin: 10px;
 }
+
+.blogs_block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.blogs_element{
+    margin: 20px 0;    
+}
+
+.blogs_text {
+    width: 360px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.blogs_block img{
+    width: 360px;
+    height: 250px;
+}
+
+.blogs_element h3{
+    width: 370px;
+}
+
+.blogs_block a{
+    color: black;
+    text-decoration: none;
+}
+
+.blog_detail h2{
+    text-align: center;
+}
+
+.blog_detail div{
+    margin: 1% 20% 1% 20%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    text-align: justify;
+}

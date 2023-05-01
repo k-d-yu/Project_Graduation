@@ -1,0 +1,22 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+<div class="blogs_block">
+    {% for blog in blogs %}
+    <div class="blogs_element">
+        <a href="{% url 'blog:blog_detail' blog.id %}">
+            <h3>
+                {{ blog.title|truncatechars:34 }}
+            </h3>
+            <div>
+                <img src="{{ blog.image.url }}" alt="">
+            </div>
+            <div class="blogs_text">
+                {{ blog.description|truncatechars:140|linebreaksbr }}
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

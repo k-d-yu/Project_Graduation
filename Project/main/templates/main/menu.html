@@ -16,16 +16,7 @@
     <div class="underline"></div>
     <div class="menu">
         <div class="wrap">
-            <ul>
-                <li><a href="{% url 'index' %}">Главная</a></li>
-                <li><a href="{% url 'about' %}">О психологе</a></li>
-                <li><a href="{% url 'session' %}">О сеансе</a></li>
-                <li><a href="#">Блог</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Запись на прием</a></li>
-                <li><a href="{% url 'contacts' %}">Контакты</a></li>
-                <li><a href="#">Личный кабинет</a></li>
-            </ul>
+            {% include 'main/point_menu.html' %}
         </div>
     </div>
     <div class="underline"></div>
@@ -51,16 +42,7 @@
         </div>
     </div>
     <div class="footer_block_2">
-        <ul>
-            <li><a href="{% url 'index' %}">Главная</a></li>
-            <li><a href="{% url 'about' %}">О психологе</a></li>
-            <li><a href="{% url 'session' %}">О сеансе</a></li>
-            <li><a href="#">Блог</a></li>
-            <li><a href="#">Отзывы</a></li>
-            <li><a href="#">Запись на прием</a></li>
-            <li><a href="{% url 'contacts' %}">Контакты</a></li>
-            <li><a href="#">Личный кабинет</a></li>
-        </ul>
+        {% include 'main/point_menu.html' %}
     </div>
 </div>
 </body>
