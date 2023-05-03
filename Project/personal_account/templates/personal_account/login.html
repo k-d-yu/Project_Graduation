@@ -1,0 +1,66 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+{% load static %}
+
+
+{% if page == 'register' %}
+<div class="login_container">
+    <div class="login_card">
+        <div class="login_header">
+            <a href="{% url 'index' %}"><img src="{% static 'main/login_logo.jpg' %}" alt="Изображение"></a>
+            <h2>
+            Регистрация
+            </h2>
+        </div>
+        <form action="{% url 'personal_account:register' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="login_text_over_input">
+                {{ field.label }}
+            </div>
+                {{ field }}
+
+                {% for error in field.errors %}
+                    <p class="login_error">{{ error }}</p>
+                {% endfor %}
+
+            {% endfor %}
+            <div>
+                <input class="login_but" type="submit" value="Зарегистрироваться">
+            </div>
+        </form>
+        <div class="login_q">У Вас уже есть аккаунт?</div>
+        <a href="{% url 'personal_account:login' %}" class="login_reg">Войти</a>
+    </div>
+</div>
+{% else %}
+<div class="login_container">
+    <div class="login_card">
+        <div class="login_header">
+            <a href="{% url 'index' %}"><img src="{% static 'main/login_logo.jpg' %}" alt="Изображение"></a>
+            <h2>
+            Вход в личный кабинет
+            </h2>
+        </div>
+        <form action="{% url 'personal_account:login' %}" method="post">
+            {% csrf_token %}
+            <div class="login_text_over_input">
+                Имя пользователя:
+            </div>
+                <input class="login_input" type="text" name="username" placeholder="Введите имя пользователя">
+            <div class="login_text_over_input">
+                Пароль:
+            </div>
+                <input class="login_input" type="password" name="password" placeholder="Введите пароль">
+            <div class="login_container_but">
+                <div>
+                    <input class="login_but" type="submit" value="Войти">
+                </div>
+                <a href="#" class="login_a">Забыли пароль?</a>
+            </div>
+        </form>
+        <a href="{% url 'personal_account:register' %}" class="login_a">Зарегистрироваться</a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
     'blogs.apps.BlogsConfig',
+    'personal_account.apps.PersonalAccountConfig',
+    "phonenumber_field",
 ]
 
 MIDDLEWARE = [

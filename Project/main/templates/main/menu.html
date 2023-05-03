@@ -20,7 +20,16 @@
         </div>
     </div>
     <div class="underline"></div>
-
+    {% if messages %}
+        {% for message in messages %}
+            <div style="text-align: center">
+                <div class="alert alert--{{message.tags}}">
+                    <p class="alert__message">{{ message }}</p>
+                    <button class="alert__close">⨯</button>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
     <div>
         {% block content %}
         {% endblock %}
@@ -45,5 +54,6 @@
         {% include 'main/point_menu.html' %}
     </div>
 </div>
+    <script src="{% static 'js/messages.js' %}"></script>
 </body>
 </html>

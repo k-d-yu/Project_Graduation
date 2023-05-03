@@ -1,0 +1,32 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+<h2 class="profile_h2">
+    <a href="{% url 'personal_account:profile_user' %}" class="profile_h2_a">
+        Личный кабинет
+    </a>
+</h2>
+<h3 class="profile_h3">
+    {{ profile.username }}
+</h3>
+<div class="profile_img">
+    <img src="{{ profile.profile_image.url }}">
+</div>
+<h3 class="profile_h3">
+    {{ profile.surname }} {{ profile.name}} {{ profile.patronymic }}
+</h3>
+<div class="profile_card">
+    <div>
+        <a href="{% url 'personal_account:edit_account' %}">Личные данные</a>
+    </div>
+    <div>
+        <a href="#">Записи на прием</a>
+    </div>
+    <div>
+        <a href="#">Изменить пароль</a>
+    </div>
+    <div>
+        <a href="{% url 'personal_account:logout' %}">Выйти</a>
+    </div>
+</div>
+{% endblock %}

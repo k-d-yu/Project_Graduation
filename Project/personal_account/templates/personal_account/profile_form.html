@@ -1,0 +1,39 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+{% load static %}
+
+<h2 class="profile_h2">
+    <a href="{% url 'personal_account:profile_user' %}" class="profile_h2_a">
+        Личный кабинет
+    </a>
+</h2>
+
+<div class="login_container">
+    <div class="login_card">
+        <div class="login_header">
+            <a href="{% url 'personal_account:profile_user' %}"><img src="{% static 'main/login_logo.jpg' %}" alt="Изображение"></a>
+            <h2>
+            Личные данные
+            </h2>
+        </div>
+        <form action="{% url 'personal_account:edit_account' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="login_text_over_input">
+                {{ field.label }}
+            </div>
+                {{ field }}
+
+                {% for error in field.errors %}
+                    <p class="login_error">{{ error }}</p>
+                {% endfor %}
+
+            {% endfor %}
+            <div style="text-align:center">
+                <input class="login_but" type="submit" value="Сохранить">
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
