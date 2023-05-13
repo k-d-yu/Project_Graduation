@@ -5,6 +5,7 @@ body{
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
 }
 
 .wrap{
@@ -547,6 +548,7 @@ body{
 
 .profile_h2{
     margin-left: 3%;
+    text-transform: uppercase;
 }
 
 .profile_h2_a{
@@ -593,3 +595,151 @@ body{
 .profile_card a:hover{
     background: pink;
 }
+
+.section{
+    background-color: #2d2d39;
+}
+
+.blogs_container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 5%;
+    box-sizing: border-box;
+    align-items: baseline;
+}
+
+.blogs_input{
+    width: 500px;    
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-right: 20px;
+}
+
+.blogs_submit{
+    font-size: 16px;    
+    padding: 10px 30px;
+    background-color: #51546e;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.blogs_submit:hover{
+    background: rgb(8, 8, 8);
+}
+
+.pagination{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.pagination ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+  
+.btn{
+    background-color: #e5e7eb;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.btn_check{
+    background-color: #51546e;
+    color: white;
+}
+
+.btn_check:hover, .btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.reviews_container{
+    display: flex;
+    justify-content: center;
+}
+
+.reviews img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;   
+    margin-right: 20px;
+    margin-top: 20px; 
+
+}
+
+.reviews{
+    display: flex;
+    width: 50%;
+    text-align: justify;
+    background-color: rgb(166, 165, 165);
+    margin-bottom: 50px;
+    padding: 0px 50px 0 50px;
+    box-sizing: border-box;
+}
+
+.reviews_owner{
+    margin-top: 20px; 
+    font-weight: bold;
+    margin-bottom: 10px;
+    align-items: baseline;
+}
+
+.reviews_date{
+    margin-top: 10px;
+    font-style: italic;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.reviews_but{
+    text-align: center;
+}
+
+.reviews_but input{
+    font-size: 14px;    
+}
+
+.reviews_text_input{
+    width: 50%;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;    
+    border-color: gray;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.reviews_text{
+    text-align: center;
+}
+
+.profile_p{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile_a{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile_a a{
+    text-decoration: none;
+    color: blue;
+}
+

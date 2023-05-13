@@ -4,7 +4,7 @@
     <li><a href="{% url 'about' %}">О психологе</a></li>
     <li><a href="{% url 'session' %}">О сеансе</a></li>
     <li><a href="{% url 'blog:blogs' %}">Блог</a></li>
-    <li><a href="#">Отзывы</a></li>
+    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
     <li><a href="#">Запись на прием</a></li>
     <li><a href="{% url 'contacts' %}">Контакты</a></li>
     <li class="username"><a href="{% url 'personal_account:profile_user' %}">{{ user.username }}</a></li>
@@ -15,7 +15,7 @@
     <li><a href="{% url 'about' %}">О психологе</a></li>
     <li><a href="{% url 'session' %}">О сеансе</a></li>
     <li><a href="{% url 'blog:blogs' %}">Блог</a></li>
-    <li><a href="#">Отзывы</a></li>
+    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
     <li><a href="#">Запись на прием</a></li>
     <li><a href="{% url 'contacts' %}">Контакты</a></li>
     <li><a href="{% url 'personal_account:login' %}">Личный кабинет</a></li>

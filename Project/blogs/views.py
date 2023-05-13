@@ -1,10 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Blogs
+from .utils import search_blog, paginate_blogs
 
 
 def blogs(request):
-    blogs = Blogs.objects.order_by("-date")
-    context = {"blogs": blogs}
+    blogs, search = search_blog(request)
+    custom_range, blogs = paginate_blogs(request, blogs, 3)
+
+    context = {"blogs": blogs,
+               'search': search,
+               'custom_range': custom_range}
+
     return render(request, "blog/blogs.html", context)
 
 

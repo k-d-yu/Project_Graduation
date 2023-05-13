@@ -12,6 +12,7 @@ urlpatterns = [
     path('contacts/', views.contacts, name="contacts"),
     path('blog/', include("blogs.urls")),
     path('personal_account/', include("personal_account.urls")),
+    path('reviews/', views.reviews, name="reviews"),
 ]
 
 if settings.DEBUG:

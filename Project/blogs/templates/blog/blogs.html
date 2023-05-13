@@ -1,5 +1,19 @@
 {% extends 'main/menu.html' %}
 {% block content %}
+{% load static %}
+
+<div class="section">
+    <form id="search" action="{% url 'blog:blogs' %}" method="get">
+        <div class="blogs_container">
+            <div>
+                <input class="blogs_input" type="text" name="search" placeholder="Введите запрос" value="{{ search }}">
+            </div>
+            <div>
+                <input class="blogs_submit" type="submit" value="Искать">
+            </div>
+        </div>
+    </form>
+</div>
 
 <div class="blogs_block">
     {% for blog in blogs %}
@@ -19,4 +33,28 @@
     {% endfor %}
 </div>
 
+{% if blogs.has_other_pages %}
+    <div class="pagination">
+        <ul>
+            {% if blogs.has_previous %}
+                <li><a href="?page={{ blogs.previous_page_number }}" class="btn page-link"
+                       data-page="{{ blogs.previous_page_number }}">&lt; Предыдущая</a></li>
+            {% endif %}
+
+            {% for page in custom_range %}
+                {% if page == blogs.number %}
+                    <li><a href="?page={{page}}" class="btn btn_check page-link" data-page="{{ page }}">{{ page }}</a></li>
+                {% else %}
+                    <li><a href="?page={{page}}" class="btn page-link" data-page="{{ page }}">{{ page }}</a></li>
+                {% endif %}
+            {% endfor %}
+
+            {% if blogs.has_next %}
+                <li><a href="?page={{ blogs.next_page_number }}" class="btn page-link"
+                data-page="{{ blogs.next_page_number }}">Следующая &gt;</a></li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}
+<script src="{% static 'js/paginator.js' %}"></script>
 {% endblock %}

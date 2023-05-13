@@ -1,0 +1,38 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+<h2 class="profile_h2">Отзывы</h2>
+{% if request.user.profile.id in feedbacks %}
+    <p class="profile_p">Вы уже оставляли свой отзыв</p>
+{% elif request.user.is_authenticated %}
+<form action="{% url 'reviews' %}" method="post">
+    {% csrf_token %}
+    <div class="reviews_text">
+        {% for field in form %}
+            {{ field }}
+        {% endfor %}
+    </div>
+    <div class="reviews_but">
+        <input type="submit" value="Оставить отзыв" class="login_but">
+    </div>
+</form>
+{% else %}
+    <div class="profile_a"><a href="{% url 'personal_account:login' %}">Пожалуйста, войдите в систему, чтобы оставить отзыв.</a></div>
+{% endif %}
+
+{% for profile in profiles %}
+    {% for feedback in profile.feedback_set.all %}
+    <div class="reviews_container">
+        <div class="reviews">
+                <img src="{{ feedback.owner.profile_image.url }}" alt="">
+                <div>
+                    <div class="reviews_owner">{{ feedback.owner.username }}</div>
+                    <div>{{ feedback.body|linebreaksbr }}</div>
+                    <div class="reviews_date">{{ feedback.created }}</div>
+                </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endfor %}
+
+{% endblock %}
