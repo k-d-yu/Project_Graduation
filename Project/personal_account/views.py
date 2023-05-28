@@ -6,6 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegisterForm, ProfileForm
 
+from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth.forms import PasswordChangeForm
+
 
 def login_user(request):
     if request.user.is_authenticated:
@@ -80,3 +83,17 @@ def edit_account(request):
 
     context = {'form': form}
     return render(request, "personal_account/profile_form.html", context)
+
+
+@login_required(login_url="personal_account:login")
+def change_password(request):
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, 'Ваш пароль успешно изменен!')
+            return redirect('personal_account:profile_user')
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'personal_account/change_password.html', {'form': form})

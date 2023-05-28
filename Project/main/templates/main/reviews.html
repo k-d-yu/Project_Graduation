@@ -22,16 +22,30 @@
 
 {% for profile in profiles %}
     {% for feedback in profile.feedback_set.all %}
-    <div class="reviews_container">
-        <div class="reviews">
-                <img src="{{ feedback.owner.profile_image.url }}" alt="">
-                <div>
-                    <div class="reviews_owner">{{ feedback.owner.username }}</div>
-                    <div>{{ feedback.body|linebreaksbr }}</div>
-                    <div class="reviews_date">{{ feedback.created }}</div>
+        {% if request.user.profile.id == profile.id %}
+            <div class="reviews_container">
+                <div class="reviews">
+                        <img src="{{ feedback.owner.profile_image.url }}" alt="">
+                        <div>
+                            <div class="reviews_owner">{{ feedback.owner.username }}</div>
+                            <div class="review_text">{{ feedback.body|linebreaksbr }}</div>
+                            <div>{{ feedback.created }}</div>
+                            <div class="del"><a href="{% url 'reviews_delete' %}">Удалить отзыв</a></div>
+                        </div>
                 </div>
-        </div>
-    </div>
+            </div>
+        {% else %}
+            <div class="reviews_container">
+                <div class="reviews">
+                        <img src="{{ feedback.owner.profile_image.url }}" alt="">
+                        <div>
+                            <div class="reviews_owner">{{ feedback.owner.username }}</div>
+                            <div>{{ feedback.body|linebreaksbr }}</div>
+                            <div class="reviews_date">{{ feedback.created }}</div>
+                        </div>
+                </div>
+            </div>
+        {% endif %}
     {% endfor %}
 {% endfor %}
 

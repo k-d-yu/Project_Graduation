@@ -1,0 +1,16 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+<div class="form_del">
+    <form method="post">
+        {% csrf_token %}
+        <p>Вы уверены, что хотите удалить свой отзыв?</p>
+        <div class="form_del_but">
+            <a href="{% url 'reviews' %}">Назад</a>
+            <button>Удалить</button>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

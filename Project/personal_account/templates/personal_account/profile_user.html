@@ -13,7 +13,15 @@
     <img src="{{ profile.profile_image.url }}">
 </div>
 <h3 class="profile_h3">
-    {{ profile.surname }} {{ profile.name}} {{ profile.patronymic }}
+    {% if profile.surname %}
+    {{ profile.surname }}
+    {% endif %}
+    {% if profile.name %}
+    {{ profile.name}}
+    {% endif %}
+    {% if profile.patronymic %}
+    {{ profile.patronymic }}
+    {% endif %}
 </h3>
 <div class="profile_card">
     <div>
@@ -23,7 +31,7 @@
         <a href="#">Записи на прием</a>
     </div>
     <div>
-        <a href="#">Изменить пароль</a>
+        <a href="{% url 'personal_account:change_password' %}">Изменить пароль</a>
     </div>
     <div>
         <a href="{% url 'personal_account:logout' %}">Выйти</a>

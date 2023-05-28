@@ -13,7 +13,6 @@ class Profile(models.Model):
     phoneNumber = PhoneNumberField(null=True, blank=True, verbose_name='Номер телефона')
     secondPhoneNumber = PhoneNumberField(null=True, blank=True, verbose_name='Доп. номер телефона')
     bio = models.TextField(null=True, blank=True, verbose_name='О себе')
-    date_of_birth = models.DateField(null=True, blank=True, verbose_name='Дата рождения')
     profile_image = models.ImageField(upload_to='profiles/', default='profiles/user-default.png', verbose_name='Фото')
     created = models.DateTimeField(auto_now_add=True, verbose_name='Дата регистрации')
 
@@ -23,4 +22,3 @@ class Profile(models.Model):
     class Meta:
         verbose_name = "Профиль"
         verbose_name_plural = "Профили"
-

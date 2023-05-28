@@ -13,6 +13,7 @@ urlpatterns = [
     path('blog/', include("blogs.urls")),
     path('personal_account/', include("personal_account.urls")),
     path('reviews/', views.reviews, name="reviews"),
+    path('reviews-delete/', views.reviews_delete, name="reviews_delete"),
 ]
 
 if settings.DEBUG:

@@ -21,11 +21,9 @@ class UserRegisterForm(UserCreationForm):
 class ProfileForm(ModelForm):
     class Meta:
         model = Profile
-        fields = ['surname', 'name', 'patronymic', 'email', 'phoneNumber', 'secondPhoneNumber', 'bio',
-                  'date_of_birth', 'profile_image']
+        fields = ['surname', 'name', 'patronymic', 'email', 'phoneNumber', 'secondPhoneNumber', 'bio', 'profile_image']
         labels = {'surname': 'Фамилия', 'name': 'Имя', 'patronymic': 'Отчество', 'phoneNumber': 'Номер телефона',
-                  'secondPhoneNumber': 'Доп. номер телефона', 'bio': 'О себе', 'date_of_birth': 'Дата рождения',
-                  'profile_image': 'Фотография'}
+                  'secondPhoneNumber': 'Доп. номер телефона', 'bio': 'О себе', 'profile_image': 'Фотография'}
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
