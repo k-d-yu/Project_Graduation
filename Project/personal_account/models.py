@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from phonenumber_field.modelfields import PhoneNumberField
 
 
+User._meta.get_field('email')._unique = True
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True, verbose_name='Имя пользователя')
     username = models.CharField(max_length=200, null=True, blank=True, verbose_name='Имя пользователя')
