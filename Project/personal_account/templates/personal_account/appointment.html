@@ -1,0 +1,16 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+<div class="bcg_appointment">
+    <h3 class="appointment_h3">
+        Вы записаны на:
+    </h3>
+    <div class="appointment_content">
+        {% for i in form %}
+            <div class="appointment_date"> {{ i.date }} </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
