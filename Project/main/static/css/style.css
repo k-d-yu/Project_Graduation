@@ -856,3 +856,35 @@ body{
     align-items: baseline;
     justify-content: center;
 }
+
+.bcg_appointment{
+    background-image: url(../main/background_appointment.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 620px;
+    margin-top: -20px;
+}
+
+.appointment_h3{
+    margin-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.appointment_content{
+    margin-left: 3%;
+    text-transform: uppercase;
+}
+
+.appointment_date{
+    border: 1px solid gray;
+    margin-bottom: 50px;
+    width: 20%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+

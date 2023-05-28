@@ -5,7 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegisterForm, ProfileForm
-
+from .models import Appointment
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
@@ -97,3 +97,12 @@ def change_password(request):
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'personal_account/change_password.html', {'form': form})
+
+
+@login_required(login_url="personal_account:login")
+def appointment(request):
+    profile = request.user.profile
+    form = profile.appointment_set.all()
+
+    context = {'form': form}
+    return render(request, 'personal_account/appointment.html', context)

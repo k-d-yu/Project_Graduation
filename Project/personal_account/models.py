@@ -22,3 +22,16 @@ class Profile(models.Model):
     class Meta:
         verbose_name = "Профиль"
         verbose_name_plural = "Профили"
+
+
+class Appointment(models.Model):
+    owner = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, verbose_name='Имя пользователя')
+    date = models.DateTimeField(verbose_name='Дата записи')
+
+    class Meta:
+        verbose_name = "Запись"
+        verbose_name_plural = "Записи"
+        ordering = ['date']
+
+    def __str__(self):
+        return f'{self.owner}'
