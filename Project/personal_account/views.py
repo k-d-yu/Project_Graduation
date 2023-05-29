@@ -7,7 +7,11 @@ from django.contrib import messages
 from .forms import UserRegisterForm, ProfileForm
 from .models import Appointment
 from django.contrib.auth import update_session_auth_hash
-from django.contrib.auth.forms import PasswordChangeForm
+from django.contrib.auth.forms import PasswordChangeForm, PasswordResetForm, SetPasswordForm
+from django.contrib.auth.views import PasswordResetView, PasswordResetConfirmView
+from django.urls import reverse_lazy
+from django.contrib.messages.views import SuccessMessageMixin
+
 
 
 def login_user(request):
@@ -106,3 +110,19 @@ def appointment(request):
 
     context = {'form': form}
     return render(request, 'personal_account/appointment.html', context)
+
+
+class UserForgotPasswordView(SuccessMessageMixin, PasswordResetView):
+    form_class = PasswordResetForm
+    template_name = 'personal_account/password-reset.html'
+    success_url = reverse_lazy('personal_account:login')
+    success_message = 'Письмо с инструкцией по восстановлению пароля отправлено на ваш email'
+    subject_template_name = 'personal_account/password-subject-reset-mail.html'
+    email_template_name = 'personal_account/password-reset-mail.html'
+
+
+class UserPasswordResetConfirmView(SuccessMessageMixin, PasswordResetConfirmView):
+    form_class = SetPasswordForm
+    template_name = 'personal_account/password-set-new.html'
+    success_url = reverse_lazy('personal_account:login')
+    success_message = 'Вы успешно восстановили пароль, теперь вы можете авторизоваться с новым паролем'

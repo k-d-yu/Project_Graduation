@@ -805,11 +805,13 @@ body{
     text-align: 14px;
 }
 
-.photo_password .errorlist{
+.photo_password .errorlist, .wrap .errorlist{
     background: red;
     list-style: none;
     margin: 0;
     padding: 0;
+    max-width: 50%;
+    font-size: 18px;
 }
 
 .form_del{
@@ -828,7 +830,7 @@ body{
     padding-bottom: 10px;
 }
 
-.form_del button{
+.form_del button, .wrap button{
     font-size: 16px;
     padding: 10px 40px;   
     background-color: #51546e;
@@ -837,7 +839,7 @@ body{
     cursor: pointer;
 }
 
-.form_del button:hover, .form_del a:hover{
+.form_del button:hover, .form_del a:hover, .wrap button:hover{
     background: black;
 }
 
@@ -888,3 +890,39 @@ body{
     text-align: center;
 }
 
+.bcg_psw{
+    background: url(../main/background_passwordreset.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 670px;
+}
+
+.bcg_psw .wrap{
+    margin-left: 5%;    
+}
+
+.wrap h4{
+    font-size: 22px;
+    text-transform: uppercase;
+    padding-top: 2%;
+}
+
+.wrap #id_email{
+    font-size: 16px;
+    padding-right: 40px;
+}
+
+.wrap p{
+    font-size: 18px;
+}
+
+.bcg__psw{
+    max-width: 50%;
+}
+
+.bcg__psw .errorlist{
+    list-style: disc;
+    max-width: 100%;
+    padding-left: 7%;
+}

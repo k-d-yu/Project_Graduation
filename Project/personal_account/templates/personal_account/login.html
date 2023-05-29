@@ -56,7 +56,7 @@
                 <div>
                     <input class="login_but" type="submit" value="Войти">
                 </div>
-                <a href="#" class="login_a">Забыли пароль?</a>
+                <a href="{% url 'personal_account:password-reset' %}" class="login_a">Забыли пароль?</a>
             </div>
         </form>
         <a href="{% url 'personal_account:register' %}" class="login_a">Зарегистрироваться</a>
