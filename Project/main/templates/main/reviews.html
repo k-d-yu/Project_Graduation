@@ -25,7 +25,7 @@
         {% if request.user.profile.id == profile.id %}
             <div class="reviews_container">
                 <div class="reviews">
-                        <img src="{{ feedback.owner.profile_image.url }}" alt="">
+                        <div class="reviews_img"><img src="{{ feedback.owner.profile_image.url }}" alt=""></div>
                         <div>
                             <div class="reviews_owner">{{ feedback.owner.username }}</div>
                             <div class="review_text">{{ feedback.body|linebreaksbr }}</div>
@@ -37,7 +37,7 @@
         {% else %}
             <div class="reviews_container">
                 <div class="reviews">
-                        <img src="{{ feedback.owner.profile_image.url }}" alt="">
+                        <div class="reviews_img"><img src="{{ feedback.owner.profile_image.url }}" alt=""></div>
                         <div>
                             <div class="reviews_owner">{{ feedback.owner.username }}</div>
                             <div>{{ feedback.body|linebreaksbr }}</div>
