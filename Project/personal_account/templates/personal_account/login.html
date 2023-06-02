@@ -25,7 +25,7 @@
                 {% endfor %}
 
             {% endfor %}
-            <div>
+            <div class="login_but_reg">
                 <input class="login_but" type="submit" value="Зарегистрироваться">
             </div>
         </form>
@@ -53,10 +53,10 @@
             </div>
                 <input class="login_input" type="password" name="password" placeholder="Введите пароль">
             <div class="login_container_but">
-                <div>
+                <div class="login_but_but">
                     <input class="login_but" type="submit" value="Войти">
                 </div>
-                <a href="{% url 'personal_account:password-reset' %}" class="login_a">Забыли пароль?</a>
+                <div class="login_a_psw"><a href="{% url 'personal_account:password-reset' %}" class="login_a">Забыли пароль?</a></div>
             </div>
         </form>
         <a href="{% url 'personal_account:register' %}" class="login_a">Зарегистрироваться</a>
