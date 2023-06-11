@@ -14,6 +14,8 @@ urlpatterns = [
     path('personal_account/', include("personal_account.urls")),
     path('reviews/', views.reviews, name="reviews"),
     path('reviews-delete/', views.reviews_delete, name="reviews_delete"),
+    path('make-an-appointment/', views.make_an_appointment, name="make_an_appointment"),
+    path('thanks/', views.thanks, name="thanks"),
 ]
 
 if settings.DEBUG:

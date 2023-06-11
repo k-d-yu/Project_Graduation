@@ -5,6 +5,10 @@ from personal_account.forms import FeedbackForm
 from django.contrib import messages
 from main.models import Feedback
 from django.contrib.auth.decorators import login_required
+from .models import MakeAnAppointment
+from .forms import MakeAnAppointmentForm
+import re
+from sendmessage_in_tg import send_telegram
 
 
 def index(request):
@@ -61,3 +65,29 @@ def reviews_delete(request):
 
     context = {'profile': profile, 'feedbacks': feedbacks}
     return render(request, "main/reviews_delete.html", context)
+
+
+def make_an_appointment(request):
+    form = MakeAnAppointmentForm()
+    context = {'form': form}
+    return render(request, "main/make_an_appointment.html", context)
+
+
+def thanks(request):
+    if request.POST:
+        name = request.POST['name']
+        phone = request.POST['phone']
+        pattern = "^\\+?[1-9][0-9]{7,14}$"
+        reg = re.findall(pattern, phone)
+
+        if reg:
+            appointment = MakeAnAppointment(name=name, phone=phone)
+            appointment.save()
+            send_telegram(tg_name=name, tg_phone=phone)
+            return render(request, "main/thanks.html", {'name': name})
+        else:
+            messages.error(request, "Некорректно указан номер телефона!")
+            return redirect('make_an_appointment')
+
+    else:
+        return render(request, "main/thanks.html")

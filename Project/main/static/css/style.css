@@ -931,6 +931,32 @@ body{
     padding-left: 7%;
 }
 
+.makeanapp_h2{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.makeanapp_input{
+    width: 100%;
+    padding: 1%;
+    font-size: 18px;
+    margin-bottom: 8%;
+}
+
+.makeanapp_label{
+    font-weight: bold;
+}
+
+.makeanappbut{
+    text-align: center;
+}
+
+.thanks{
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
 @media (max-width: 890px){
     .wrap li{
         margin-left: 10px;       

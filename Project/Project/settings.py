@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'personal_account.apps.PersonalAccountConfig',
     "phonenumber_field",
     'django.contrib.sites',
+    'telebot.apps.TelebotConfig',
 ]
 
 SITE_ID = 1

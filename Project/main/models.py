@@ -1,5 +1,6 @@
 from django.db import models
 from personal_account.models import Profile
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class About(models.Model):
@@ -35,3 +36,16 @@ class Feedback(models.Model):
     class Meta:
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
+
+
+class MakeAnAppointment(models.Model):
+    name = models.CharField(max_length=200, verbose_name='Имя')
+    phone = PhoneNumberField(verbose_name='Номер телефона')
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Дата заявки')
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        verbose_name = 'Запись на прием'
+        verbose_name_plural = 'Записи на прием'

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import About, Session, Feedback
+from .models import About, Session, Feedback, MakeAnAppointment
 
 
 class AboutAdmin(admin.ModelAdmin):
@@ -18,6 +18,14 @@ class FeedbackAccountAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'owner', 'created')
 
 
+class MakeAnAppointmentAdmin(admin.ModelAdmin):
+    readonly_fields = ("date",)
+    list_display = ('id', 'name', 'phone', 'date')
+    list_display_links = ('id', 'name', 'phone', 'date')
+    search_fields = ('id', 'name', 'phone', 'date')
+
+
 admin.site.register(Session, SessionAdmin)
 admin.site.register(About, AboutAdmin)
 admin.site.register(Feedback, FeedbackAccountAdmin)
+admin.site.register(MakeAnAppointment, MakeAnAppointmentAdmin)

@@ -1,0 +1,21 @@
+{% extends 'main/menu.html' %}
+{% block content %}
+
+
+<h2 class="makeanapp_h2">Оставьте заявку</h2>
+
+<div class="login_container">
+    <form method="POST" action="{% url 'thanks' %}">
+        {% csrf_token %}
+        <label class="makeanapp_label">Имя:</label><br>
+        {{ form.name }}
+        <label class="makeanapp_label">Телефон:</label><br>
+        {{ form.phone }}
+        <div class="login_but_reg makeanappbut">
+            <input class="login_but" type="submit" value="Оставить заявку">
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
