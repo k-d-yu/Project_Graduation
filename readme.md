@@ -1,11 +1,9 @@
 # Личный сайт психолога 
 ## Запуск
 
-В терминале PyСharm:
 ```bash
- cd .\Project\
+pip install -r requirements.txt
 ```
-Затем запускаем сервер:
 ```bash
-python manage.py runserver 
+Project_Graduation\Project: python manage.py runserver 
 ```
